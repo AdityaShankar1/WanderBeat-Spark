@@ -13,44 +13,48 @@ This project is classifies the emotional "vibe" of a song using Machine Learning
    The core methodology transfers to any product requiring intelligent, user-centric recommendations.
 
 ## ✨ Project Features:
-Vibe Classification: Uses a K-Nearest Neighbors (KNN) model, trained on 114,000 tracks, to classify music into Introspective, Mellow, Intense, or Jubilant.
+1. Vibe Classification: Uses a K-Nearest Neighbors (KNN) model, trained on 114,000 tracks, to classify music into Introspective, Mellow, Intense, or Jubilant.
 
-Spotify Integration: The system architecture relies on the Spotify Web API to retrieve song audio features (e.g., valence, energy).
+2. Spotify Integration: The system architecture relies on the Spotify Web API to retrieve song audio features (e.g., valence, energy).
 
-Note: Due to runtime restrictions, the final execution utilized a robust Fallback Mode relying on the local backup dataset.
+### Note: Due to runtime restrictions, the final execution utilized a robust Fallback Mode relying on the local backup dataset.
 
-Recommendation Engine: Queries a local SQLite database to find destinations pre-labeled with the predicted song Vibe.
+3. Recommendation Engine: Queries a local SQLite database to find destinations pre-labeled with the predicted song Vibe.
 
-Visualization: A scatter plot shows the 114k Vibe distribution, highlighting the user's predicted track within the Vibe space.
+4. Visualization: A scatter plot shows the 114k Vibe distribution, highlighting the user's predicted track within the Vibe space.
 
 ## 🗺️ Data Sources:
 
-### Initially worked with Spotify API however due to API issues resorted to SQLite data
+### Initially worked successfully with Spotify API however due to API issues resorted to SQLite data. For code involving Spotify API data refer to: SpotifySpark.ipynb (https://github.com/AdityaShankar1/WanderBeat-Spark/blob/main/SpotifySpark.ipynb)
 
-ML Training Data: Sourced from a large local CSV file (dataset.csv) containing 114,000 Spotify tracks and their audio features.
+1. ML Training Data: Sourced from a large CSV file (dataset.csv) sourced from Kaggle containing 114k+ Spotify tracks and their audio features.
 
-Travel Destinations: Sourced from a local CSV file (travel\_data.csv). This static file was loaded into the SQLite database.
+2. Travel Destinations: Sourced from Kaggle CSV file (travel\_data.csv). This static file was loaded into the SQLite database.
 
-Destinations like Rio and Ibiza, used in early tests, were hardcoded placeholders.
+3. Destinations like Rio and Ibiza, used in early tests, were hardcoded placeholders.
 
 ## ⚙️ Execution Flow:
-Dependencies are installed (spotipy, scikit-learn, etc.).
+1. Dependencies are installed (spotipy, scikit-learn, etc.).
 
-KNN Model is trained on the 114k tracks and features are Scaled.
+2. KNN Model is trained on the 114k tracks and features are Scaled.
 
-User Input (Song Title/Artist) is processed.
+3. User Input (Song Title/Artist) is processed.
 
-Fallback Mode activates, fetching the track's features from the local backup data.
+4. Fallback Mode activates, fetching the track's features from the local backup data.
 
-Vibe is Predicted by the trained ML model.
+5. Vibe is Predicted by the trained ML model.
 
-SQLite Database is queried to match the predicted Vibe to a destination.
+6. SQLite Database is queried to match the predicted Vibe to a destination.
 
-Final Recommendation and Visualization are displayed.
+7. Final Recommendation and Visualization are displayed.
 
 ## 🎯 Example Results:
+
 Input Song: "Malang (Title Track)" by Ved Sharma
-
 Predicted Vibe: Jubiliant
-
 Recommended Destinations: Rio, Ibiza
+
+## ℹ️ Additional Info:
+Feedback Welcome!
+Let's dicuss: https://www.linkedin.com/in/aditya-shankar-35a85a247
+Built with ❤️ for Travel 
