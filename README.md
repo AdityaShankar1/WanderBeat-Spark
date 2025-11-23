@@ -12,12 +12,21 @@ This project is classifies the emotional "vibe" of a song using Machine Learning
 3. Cross-Domain Application: Demonstrates how implicit behavioral data can drive personalization across industries—from travel and e-commerce to content platforms and lifestyle services.
    The core methodology transfers to any product requiring intelligent, user-centric recommendations.
 
+## ⚙️ Tech Stack & Tools used:
+Language: Python
+Machine Learning: Scikit-Learn 
+Data Storage: SQLite
+Data handling: Polars (for fallback dataset), PySpark (for scalability)
+Other libraries: Spotipy (to interact with Spotify Web API), NumPy, Matplotlib & Seaborn (Vizualization), Requests
+Execution Environment: Google Colab
+
 ## ✨ Project Features:
 1. Vibe Classification: Uses a K-Nearest Neighbors (KNN) model, trained on 114,000 tracks, to classify music into Introspective, Mellow, Intense, or Jubilant.
 
 2. Spotify Integration: The system architecture relies on the Spotify Web API to retrieve song audio features (e.g., valence, energy).
 
-### Note: Due to runtime restrictions, the final execution utilized a robust Fallback Mode relying on the local backup dataset.
+### Note: 
+Due to runtime restrictions, the final execution utilized a robust Fallback Mode relying on the local backup dataset.
 
 3. Recommendation Engine: Queries a local SQLite database to find destinations pre-labeled with the predicted song Vibe.
 
@@ -25,7 +34,8 @@ This project is classifies the emotional "vibe" of a song using Machine Learning
 
 ## 🗺️ Data Sources:
 
-### Initially worked successfully with Spotify API however due to API issues resorted to SQLite data. For code involving Spotify API data refer to: SpotifySpark.ipynb (https://github.com/AdityaShankar1/WanderBeat-Spark/blob/main/SpotifySpark.ipynb)
+### Note:
+Initially worked successfully with Spotify API however due to API issues resorted to SQLite data. For code involving Spotify API data refer to: SpotifySpark.ipynb (https://github.com/AdityaShankar1/WanderBeat-Spark/blob/main/SpotifySpark.ipynb)
 
 1. ML Training Data: Sourced from a large CSV file (dataset.csv) sourced from Kaggle containing 114k+ Spotify tracks and their audio features.
 
